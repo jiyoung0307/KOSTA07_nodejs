@@ -10,28 +10,44 @@
 </head>
 <body>
     <div id="root"></div>
-
+    <!-- JSX로 element 생성 -->
     <script type="text/babel">
         const root = document.getElementById("root");
-        function P() {
+        let counter = 0;
+        function increaseCount(){
+            counter += 1;
+            console.log(counter);
+            render();
+        }
+        function P() { // 함수형 컴포넌트
              return (
                 <p id="count" onMouseEnter={() => console.log("mouse enter 이벤트 발생")}>
-                0 번 클릭했습니다.
+                {counter} 번 클릭했습니다.
                 </p>
             )
         }
         const Btn = () => 
-                (<button onClick = {() => console.log("버튼 클릭 이벤트 발생")}>
+                (<button onClick = {increaseCount}>
                 클릭하세요
-                </button>);
+                </button>); // 함수형 컴포넌트
            
-        const App = 
+        function render(){
+            ReactDOM.render(<App />,root);
+        }
+        // const App = 
+        //     (<div>
+        //         <P />
+        //         <Btn />
+        //     </div>);  // 상수
+        // ReactDOM.render(App,root);
+
+        const App = () => 
             (<div>
                 <P />
                 <Btn />
-            </div>);
+            </div>);  // 함수형 컴포넌트
             
-        ReactDOM.render(App,root);
+        render();
     </script>
     </body>
 </html>
