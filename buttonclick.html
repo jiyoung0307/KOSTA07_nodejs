@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=initial-scale, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.js" crossorigin></script>
+    <script>
+        const div = document.getElementById("root");
+        const p = React.createElement("p");
+        const btn = React.createElement("div");
+        const app = Reat.createElement("div", null, [p,btn]);
+        ReactDom.render(app,root);
+
+    </script>
+    <!-- <script>
+        let counter = 0;
+        function clickHandler() {
+            const p = document.getElementById("p");
+            // const btn = document.getElementById("btn");
+            counter++;
+            p.innerText = `${counter} 번 클릭했습니다.`;
+        }
+    </script> -->
+</head>
+<body>
+    <div id="root"></div>
+    <!-- <p id="p">0 번 클릭했습니다.</p>
+    <button id="btn" onclick="clickHandler()">클릭하세요.</button> -->
+</body>
+</html>
